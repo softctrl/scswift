@@ -1,6 +1,6 @@
 //
 //  DateUtils.swift
-//  QApp
+//  SCSwift
 //
 //  Created by Timoshenko on 06/04/17.
 //  Copyright © 2017 softctrl.com.br. All rights reserved.

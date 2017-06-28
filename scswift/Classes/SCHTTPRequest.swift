@@ -1,6 +1,6 @@
 //
 //  SCHTTPRequest.swift
-//  QApp
+//  SCSwift
 //
 //  Created by Timoshenko on 28/03/17.
 //  Copyright © 2017 softctrl.com.br. All rights reserved.
