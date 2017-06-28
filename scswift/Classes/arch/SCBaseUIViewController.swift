@@ -21,7 +21,7 @@ public class SCErrorBase : Error {}
 
 typealias ReturnAction = (SCBaseUIViewController.Return) -> Swift.Void
 
-public class SCBaseUIViewController: UIViewController {
+open class SCBaseUIViewController: UIViewController {
     
     let log : XCGLogger = {
         let _log = SCLogger.getInstance().log()
@@ -50,7 +50,7 @@ public class SCBaseUIViewController: UIViewController {
     private var waitController : UIAlertController? = nil
 
     /// <#Description#>
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SCBaseUIViewController.dismissKeyboard))
@@ -140,7 +140,7 @@ public class SCBaseUIViewController: UIViewController {
     }
 
     /// <#Description#>
-    public override func didReceiveMemoryWarning() {
+    open override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
