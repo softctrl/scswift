@@ -9,7 +9,7 @@
 import Foundation
 
 /// Basic HTTP restful client.
-public class SCHTTPRequest: NSObject {
+open class SCHTTPRequest: NSObject {
     
     /// Supported HTTP methods.
     public final class HTTPMethod {
