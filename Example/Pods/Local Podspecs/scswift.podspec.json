@@ -1,0 +1,36 @@
+{
+  "name": "scswift",
+  "version": "0.1.0",
+  "summary": "It is just a library to reduce the time cost of a Swift ios developmento project.",
+  "description": "It is just a library to reduce the time cost of a Swift ios developmento project.",
+  "homepage": "https://github.com/carlostimoshenkorodrigueslopes@gmail.com/scswift",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "carlostimoshenkorodrigueslopes@gmail.com": "carlostimoshenkorodrigueslopes@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/carlostimoshenkorodrigueslopes@gmail.com/scswift.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.3"
+  },
+  "source_files": "scswift/Classes/**/*",
+  "dependencies": {
+    "RealmSwift": [
+      "~> 2.8.3"
+    ],
+    "XCGLogger": [
+      "~> 5.0.1"
+    ],
+    "PopupDialog": [
+      "~> 0.5.4"
+    ],
+    "Socket.IO-Client-Swift": [
+      "~> 8.3.0"
+    ]
+  }
+}

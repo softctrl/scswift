@@ -1,0 +1,6 @@
+framework module scswift {
+  umbrella header "scswift-umbrella.h"
+
+  export *
+  module * { export * }
+}

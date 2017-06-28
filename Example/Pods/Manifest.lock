@@ -1,0 +1,40 @@
+PODS:
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - PopupDialog (0.5.4)
+  - Realm (2.8.3):
+    - Realm/Headers (= 2.8.3)
+  - Realm/Headers (2.8.3)
+  - RealmSwift (2.8.3):
+    - Realm (= 2.8.3)
+  - scswift (0.1.0):
+    - PopupDialog (~> 0.5.4)
+    - RealmSwift (~> 2.8.3)
+    - Socket.IO-Client-Swift (~> 8.3.0)
+    - XCGLogger (~> 5.0.1)
+  - Socket.IO-Client-Swift (8.3.3)
+  - XCGLogger (5.0.1):
+    - XCGLogger/Core (= 5.0.1)
+  - XCGLogger/Core (5.0.1):
+    - ObjcExceptionBridging
+
+DEPENDENCIES:
+  - scswift (from `../`)
+
+EXTERNAL SOURCES:
+  scswift:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
+  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
+  RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
+  scswift: c5fa44d08f26aa26b0f44b4e040b405c369fa026
+  Socket.IO-Client-Swift: a2faffdbde89c63aebc5d631041530c1068b02b8
+  XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
+
+PODFILE CHECKSUM: da7109f38f50d0156b300f7019e71e7d0ac43e35
+
+COCOAPODS: 1.2.1
