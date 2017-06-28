@@ -9,9 +9,12 @@
 import Foundation
 import SystemConfiguration
 
-class SCNetwork {
+public class SCNetwork {
     
-    static func isConnected() -> Bool {
+    /// <#Description#>
+    ///
+    /// - Returns: <#return value description#>
+    public static func isConnected() -> Bool {
         
         var zeroAddress : sockaddr_in = {
             var za = sockaddr_in()

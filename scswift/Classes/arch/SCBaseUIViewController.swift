@@ -17,9 +17,11 @@ import XCGLogger
 //}
 //
 
-class SCErrorBase : Error {}
+public class SCErrorBase : Error {}
 
-class SCBaseUIViewController: UIViewController {
+typealias ReturnAction = (SCBaseUIViewController.Return) -> Swift.Void
+
+public class SCBaseUIViewController: UIViewController {
     
     let log : XCGLogger = {
         let _log = SCLogger.getInstance().log()
@@ -30,8 +32,6 @@ class SCBaseUIViewController: UIViewController {
         case SUCCESS
         case ERROR
     }
-
-    public typealias ReturnAction = (SCBaseUIViewController.Return) -> Swift.Void
 
     private var dlg : SCDialogUtils?
     
@@ -50,7 +50,7 @@ class SCBaseUIViewController: UIViewController {
     private var waitController : UIAlertController? = nil
 
     /// <#Description#>
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SCBaseUIViewController.dismissKeyboard))
@@ -67,7 +67,7 @@ class SCBaseUIViewController: UIViewController {
     /// <#Description#>
     ///
     /// - Parameter message: <#message description#>
-    func presentWait(_ message : String = "") {
+    public func presentWait(_ message : String = "") {
 
 //        self.waitController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
 //
@@ -85,7 +85,7 @@ class SCBaseUIViewController: UIViewController {
     }
     
     /// <#Description#>
-    func dismissWait() {
+    public func dismissWait() {
 //        self.waitController?.dismiss(animated: true, completion: nil);
 //        self.waitController = nil
     }
@@ -105,7 +105,7 @@ class SCBaseUIViewController: UIViewController {
     /// <#Description#>
     ///
     /// - Parameter sender: <#sender description#>
-    func menuClicked(sender:UIBarButtonItem?){}
+    public func menuClicked(sender:UIBarButtonItem?){}
 
     
     /// <#Description#>
@@ -135,12 +135,12 @@ class SCBaseUIViewController: UIViewController {
     }
     
     /// <#Description#>
-    func dismissKeyboard() {
+    public func dismissKeyboard() {
         view.endEditing(true)
     }
 
     /// <#Description#>
-    override func didReceiveMemoryWarning() {
+    public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
@@ -149,7 +149,7 @@ class SCBaseUIViewController: UIViewController {
     /// - Parameters:
     ///   - uiViewController: <#uiViewController description#>
     ///   - animated: <#animated description#>
-    func pushViewController(_ uiViewController : UIViewController, animated : Bool = false) {
+    public func pushViewController(_ uiViewController : UIViewController, animated : Bool = false) {
         
         self.navigationController!.pushViewController(uiViewController, animated: animated)
         
@@ -161,13 +161,11 @@ class SCBaseUIViewController: UIViewController {
     ///   - viewControllerToPresent: <#viewControllerToPresent description#>
     ///   - animated: <#animated description#>
     ///   - completion: <#completion description#>
-    func presentModal(_ viewControllerToPresent: UIViewController, animated: Bool = false, completion: (() -> Swift.Void)? = nil ) {
+    public func presentModal(_ viewControllerToPresent: UIViewController, animated: Bool = false, completion: (() -> Swift.Void)? = nil ) {
 
         self.navigationController!.present(viewControllerToPresent, animated: animated, completion : completion)
 
     }
-    
-    
 
     /// <#Description#>
     ///
@@ -186,14 +184,14 @@ class SCBaseUIViewController: UIViewController {
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    func getScrollView() -> UIScrollView? {
+    public func getScrollView() -> UIScrollView? {
         return nil
     }
     
     /// <#Description#>
     ///
     /// - Throws: <#throws value description#>
-    func setupKeyBoardSupport() throws {
+    public func setupKeyBoardSupport() throws {
         
         if self.getScrollView() == nil {
             throw SCErrorBase()
@@ -206,7 +204,7 @@ class SCBaseUIViewController: UIViewController {
     /// <#Description#>
     ///
     /// - Parameter n: <#n description#>
-    func keyboardShow(_ n: Notification) {
+    public func keyboardShow(_ n: Notification) {
         
         if self.keyboardShowing {
             return
@@ -226,7 +224,7 @@ class SCBaseUIViewController: UIViewController {
     /// <#Description#>
     ///
     /// - Parameter n: <#n description#>
-    func keyboardHide(_ n: Notification) {
+    public func keyboardHide(_ n: Notification) {
         
         if !self.keyboardShowing {
             return

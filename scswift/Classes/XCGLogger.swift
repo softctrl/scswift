@@ -9,7 +9,7 @@
 import Foundation
 import XCGLogger
 
-extension XCGLogger {
+public extension XCGLogger {
 //    public static func setup () {
 //        XCGLogger
 //    }

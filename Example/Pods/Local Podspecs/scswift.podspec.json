@@ -2,8 +2,8 @@
   "name": "scswift",
   "version": "0.1.0",
   "summary": "It is just a library to reduce the time cost of a Swift ios developmento project.",
-  "description": "It is just a library to reduce the time cost of a Swift ios developmento project.",
-  "homepage": "https://github.com/carlostimoshenkorodrigueslopes@gmail.com/scswift",
+  "description": "I do have a huge library with Obj-c. But i am porting this code for Swift. Here we do have a lot of facilities that may help in any iOS project.",
+  "homepage": "https://softctrl.github.io/scswift",
   "license": {
     "type": "MIT",
     "file": "LICENSE"

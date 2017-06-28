@@ -11,7 +11,7 @@ import UIKit
 import Contacts
 
 /// <#Description#>
-class SCContactUtils {
+public class SCContactUtils {
     
     /// <#Description#>
     private var dlg : SCDialogUtils? = nil
@@ -19,14 +19,14 @@ class SCContactUtils {
     /// <#Description#>
     ///
     /// - Parameter view: <#view description#>
-    init(_ view : UIViewController) {
+    public init(_ view : UIViewController) {
         self.dlg = SCDialogUtils(view: view)
     }
 
     /// <#Description#>
     ///
     /// - Parameter handler: <#handler description#>
-    func validatePermission(handler: @escaping (_ granted: Bool) -> Void) {
+    public func validatePermission(handler: @escaping (_ granted: Bool) -> Void) {
         
         // Get authorization
         let authorizationStatus = CNContactStore.authorizationStatus(for: CNEntityType.contacts)
@@ -59,7 +59,7 @@ class SCContactUtils {
     /// <#Description#>
     ///
     /// - Parameter phoneNumber: <#phoneNumber description#>
-    func searchForContactUsingPhoneNumber(phoneNumber: String) {
+    public func searchForContactUsingPhoneNumber(phoneNumber: String) {
         
         DispatchQueue.global(/*Int(QOS_CLASS_USER_INTERACTIVE.rawValue), 0*/).async(execute: { () -> Void in
             self.validatePermission { (accessGranted) -> Void in
@@ -125,7 +125,5 @@ class SCContactUtils {
             }
         })
     }
-    
-    
-    
+
 }

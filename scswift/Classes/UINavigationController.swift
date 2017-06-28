@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UINavigationController {
+public extension UINavigationController {
     
     /// <#Description#>
     ///
@@ -26,7 +26,7 @@ extension UINavigationController {
     /// <#Description#>
     ///
     /// - Parameter value: <#value description#>
-    func setViewController(_ value : UIViewController) {
+    public func setViewController(_ value : UIViewController) {
         self.viewControllers = [value]
     }
 

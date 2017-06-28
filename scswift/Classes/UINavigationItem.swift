@@ -8,12 +8,12 @@
 
 import UIKit
 
-extension UINavigationItem {
+public extension UINavigationItem {
 
     /// <#Description#>
     ///
     /// - Parameter color: <#color description#>
-    func setTitleColor(_ color : UIColor = UIColor.black) {
+    public func setTitleColor(_ color : UIColor = UIColor.black) {
         self.titleView?.tintColor = color
     }
 

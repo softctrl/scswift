@@ -8,12 +8,12 @@
 
 import UIKit
 
-extension CGSize {
+public extension CGSize {
     
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    static func mainSize() -> CGSize {
+    public static func mainSize() -> CGSize {
         let mainBound = CGRect.mainBounds()
         return CGSize(width: mainBound.width, height: mainBound.height)
     }

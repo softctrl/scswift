@@ -8,12 +8,12 @@
 
 import UIKit
 
-extension CGRect {
+public extension CGRect {
     
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    static func mainBounds() -> CGRect {
+    public static func mainBounds() -> CGRect {
         return UIScreen.main.bounds
     }
     

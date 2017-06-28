@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StringUtils {
+public class StringUtils {
 
     /// <#Description#>
     ///

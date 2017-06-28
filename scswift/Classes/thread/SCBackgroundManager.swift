@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 /// <#Description#>
-class SCBackgroundManager: NSObject {
+public class SCBackgroundManager: NSObject {
     
-    typealias Action = () -> ()
+    public typealias Action = () -> ()
 
     /// <#Description#>
-    struct Static {
+    public struct Static {
         static var backgroundManager : SCBackgroundManager?
         static var onceToken : Int = 0
     }
@@ -32,7 +32,7 @@ class SCBackgroundManager: NSObject {
     var endAction : Action?
     
     /// <#Description#>
-    override init() {
+    public override init() {
         
         self.taskIdList = NSMutableArray()
         self.masterTaskId = UIBackgroundTaskInvalid
@@ -40,7 +40,12 @@ class SCBackgroundManager: NSObject {
 
     }
     
-    func setup(_ begin : Action? = nil, _ end : Action? = nil) {
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - begin: <#begin description#>
+    ///   - end: <#end description#>
+    public func setup(_ begin : Action? = nil, _ end : Action? = nil) {
         self.beginAction = begin
         self.endAction = end
     }
@@ -48,7 +53,7 @@ class SCBackgroundManager: NSObject {
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    class func backgroundTaskManager() -> SCBackgroundManager? {
+    public class func backgroundTaskManager() -> SCBackgroundManager? {
         _ = SCBackgroundManager.__once
         return Static.backgroundManager
     }
@@ -56,7 +61,7 @@ class SCBackgroundManager: NSObject {
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    func beginNewBackgroundTask() -> UIBackgroundTaskIdentifier? {
+    public func beginNewBackgroundTask() -> UIBackgroundTaskIdentifier? {
         
         print("SCBackgroundManager.beginNewBackgroundTask()\n")
         let application : UIApplication = UIApplication.shared
@@ -83,16 +88,19 @@ class SCBackgroundManager: NSObject {
     }
     
     /// <#Description#>
-    func endBackgroundTask(){
+    public func endBackgroundTask(){
         self.drainBGTaskList(false)
     }
     
     /// <#Description#>
-    func endAllBackgroundTasks() {
+    public func endAllBackgroundTasks() {
         self.drainBGTaskList(true)
     }
     
-    func drainBGTaskList(_ all:Bool) {
+    /// <#Description#>
+    ///
+    /// - Parameter all: <#all description#>
+    public func drainBGTaskList(_ all:Bool) {
         //mark end of each of our background task
         let application: UIApplication = UIApplication.shared
 //        let endBackgroundTask : Selector = #selector(SCBackgroundManager.endBackgroundTask)

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UITableView {
+public extension UITableView {
 
     /// <#Description#>
     ///
@@ -17,7 +17,7 @@ extension UITableView {
     ///   - controller: <#controller description#>
     ///   - automaticDimension: <#automaticDimension description#>
     ///   - estimatedRowHeight: <#estimatedRowHeight description#>
-    func setup(_ controller : UIViewController, automaticDimension : Bool = false, estimatedRowHeight : CGFloat = 20) {
+    public func setup(_ controller : UIViewController, automaticDimension : Bool = false, estimatedRowHeight : CGFloat = 20) {
 
         self.delegate = controller as? UITableViewDelegate
         self.dataSource = controller as? UITableViewDataSource
@@ -33,7 +33,7 @@ extension UITableView {
     /// - Parameters:
     ///   - nibName: <#nibName description#>
     ///   - reuseIdentifier: <#reuseIdentifier description#>
-    func registerNib(_ nibName : String!, reuseIdentifier : String? = nil) {
+    public func registerNib(_ nibName : String!, reuseIdentifier : String? = nil) {
         
         var ri = nibName
         if let reuseId = reuseIdentifier as String! {

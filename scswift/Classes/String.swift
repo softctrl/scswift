@@ -8,20 +8,20 @@
 
 import Foundation
 
-extension String {
+public extension String {
     
-    func md5() -> String {
+    public func md5() -> String {
         return "under development"
     }
     
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    func quoted() -> String {
+    public func quoted() -> String {
         return "\"\(self)\""
     }
     
-    static func isNilOrEmpty(_ value : String? = nil) -> Bool {
+    public static func isNilOrEmpty(_ value : String? = nil) -> Bool {
         return (value == nil || value!.isEmpty)
     }
     
@@ -29,18 +29,22 @@ extension String {
     /// http://stackoverflow.com/questions/24092884/get-nth-character-of-a-string-in-swift-programming-language
     ///
     /// - Parameter i: <#i description#>
-    func character(at: Int) -> Character {
+    public func character(at: Int) -> Character {
         return self[self.index(self.startIndex, offsetBy: at)]
     }
     
-    func uniChar(at: Int) -> unichar {
+    /// <#Description#>
+    ///
+    /// - Parameter at: <#at description#>
+    /// - Returns: <#return value description#>
+    public func uniChar(at: Int) -> unichar {
         return unichar(self[self.index(self.startIndex, offsetBy: at)].unicodeScalar().value)
     }
     
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    func count() -> Int {
+    public func count() -> Int {
         return self.characters.count
     }
     

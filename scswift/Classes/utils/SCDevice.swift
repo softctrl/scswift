@@ -10,9 +10,10 @@
 
 import UIKit
 
-class SCDevice {
+public class SCDevice {
 
-    static let modelName: String = {
+    /// <#Description#>
+    public static let modelName: String = {
         var systemInfo = utsname()
         uname(&systemInfo)
         let machineMirror = Mirror(reflecting: systemInfo.machine)

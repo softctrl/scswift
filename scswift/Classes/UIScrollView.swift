@@ -8,12 +8,12 @@
 
 import UIKit
 
-extension UIScrollView {
+public extension UIScrollView {
 
     /// <#Description#>
     ///
     /// - Parameter screenSize: <#screenSize description#>
-    func setupContentSize(_ screenSize : CGSize! = CGSize.mainSize()) {
+    public func setupContentSize(_ screenSize : CGSize! = CGSize.mainSize()) {
         self.contentSize = screenSize
     }
     

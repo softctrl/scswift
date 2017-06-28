@@ -8,7 +8,7 @@
 
 import PopupDialog
 
-final class SCDialogUtils: NSObject {
+public final class SCDialogUtils: NSObject {
     
     /// Constants.
     public final class Constants {
@@ -50,6 +50,13 @@ final class SCDialogUtils: NSObject {
         
     }
     
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - message: <#message description#>
+    ///   - actions: <#actions description#>
+    ///   - cancelHandler: <#cancelHandler description#>
+    ///   - completion: <#completion description#>
     public func showActionSheet(message: String!, actions : [UIAlertAction]!, cancelHandler: ((UIAlertAction) -> Swift.Void)? = nil, completion: (() -> Swift.Void)? = nil) {
         
         let optionMenu = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)

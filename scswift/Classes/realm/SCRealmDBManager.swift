@@ -11,7 +11,7 @@ import RealmSwift
 
 
 /// SCRealmDBManager - Realm database manager.
-class SCRealmDBManager: NSObject {
+public class SCRealmDBManager: NSObject {
     
     /// Default Salt when the user do not inform any salt:
     private static var DEFAULT_DBNAME = "base"
@@ -21,7 +21,7 @@ class SCRealmDBManager: NSObject {
     private var realm : Realm!
     private static var config : Realm.Configuration!
     
-    static func RlmConfig() -> Realm.Configuration! {
+    public static func RlmConfig() -> Realm.Configuration! {
         return SCRealmDBManager.config
     }
     
@@ -56,7 +56,7 @@ class SCRealmDBManager: NSObject {
     /// Constructor with default salt.
     ///
     /// - Parameter dbname: Inform a database name.
-    convenience init(dbname: String = DEFAULT_DBNAME, truncate: Bool = false) {
+    public convenience init(dbname: String = DEFAULT_DBNAME, truncate: Bool = false) {
         
         self.init(dbname: dbname, salt:SCRealmDBManager.DEFAULT_SALT, truncate: truncate)
         
@@ -65,11 +65,14 @@ class SCRealmDBManager: NSObject {
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    func rlm() -> Realm {
+    public func rlm() -> Realm {
         return try! Realm(configuration: SCRealmDBManager.config)
     }
     
-    static func Rlm() -> Realm {
+    /// <#Description#>
+    ///
+    /// - Returns: <#return value description#>
+    public static func Rlm() -> Realm {
         return try! Realm(configuration: SCRealmDBManager.config)
     }
     
@@ -95,10 +98,10 @@ class SCRealmDBManager: NSObject {
 
     }
     
-    public func find() {
-        
-    }
+    /// <#Description#>
+    public func find() {}
     
+    /// <#Description#>
     public func deleteAll() {
         
 //        let realm = try! Realm()

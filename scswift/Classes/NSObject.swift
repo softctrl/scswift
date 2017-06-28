@@ -8,12 +8,12 @@
 
 import Foundation
 
-extension NSObject {
+public extension NSObject {
     
     /// <#Description#>
     ///
     /// - Parameter jsonStr: <#jsonStr description#>
-    convenience init(_ jsonStr:String) {
+    public convenience init(_ jsonStr:String) {
         
         self.init()
         if let jsonData = jsonStr.data(using: String.Encoding.utf8, allowLossyConversion: false) {
@@ -27,7 +27,7 @@ extension NSObject {
     /// <#Description#>
     ///
     /// - Parameter data: <#data description#>
-    final func loadFromData(_ data: Data!) {
+    public final func loadFromData(_ data: Data!) {
         
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
@@ -43,7 +43,7 @@ extension NSObject {
     /// <#Description#>
     ///
     /// - Parameter json: <#json description#>
-    func loadFromJson(_ json: [String: AnyObject]) {
+    public func loadFromJson(_ json: [String: AnyObject]) {
         
         for (key, value) in json {
             let keyName = key as String
@@ -82,11 +82,15 @@ extension NSObject {
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    func toDictionary() -> Dictionary<String, Any>! {
+    public func toDictionary() -> Dictionary<String, Any>! {
         return [:]
     }
     
-    func loadFromDictionary(_ dict : Dictionary<String, Any>) -> NSObject {
+    /// <#Description#>
+    ///
+    /// - Parameter dict: <#dict description#>
+    /// - Returns: <#return value description#>
+    public func loadFromDictionary(_ dict : Dictionary<String, Any>) -> NSObject {
         return self
     }
 

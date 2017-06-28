@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension Character {
+public extension Character {
     
 //    func isNumber() -> Bool {
 //        Charat
@@ -18,7 +18,7 @@ extension Character {
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    func isNumber() -> Bool {
+    public func isNumber() -> Bool {
 
         return CharacterSet.decimalDigits.contains(String(self).unicodeScalars.first!)
 
@@ -27,7 +27,7 @@ extension Character {
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    func unicodeScalar() -> UnicodeScalar {
+    public func unicodeScalar() -> UnicodeScalar {
         return String(self).unicodeScalars.first!
     }
 

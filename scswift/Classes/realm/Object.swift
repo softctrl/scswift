@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 /// <#Description#>
-protocol  SCObject {
+public protocol  SCObject {
     func insert()
     func update(_ upd : ()->())
     func delete()
@@ -20,14 +20,14 @@ protocol  SCObject {
 extension Object : SCObject {
 
     /// <#Description#>
-    func insert() {
+    public func insert() {
         let realm = try! Realm()
         try! realm.write {
             realm.add(self)
         }
     }
     
-    func update(_ upd : ()->()) {
+    public func update(_ upd : ()->()) {
         let realm = try! Realm()
         try! realm.write {
             upd()
@@ -35,7 +35,7 @@ extension Object : SCObject {
     }
 
     
-    func delete() {
+    public func delete() {
         let realm = try! Realm()
         try! realm.write {
             realm.delete(self)

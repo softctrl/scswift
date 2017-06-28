@@ -8,10 +8,16 @@
 
 import Foundation
 
-class DateUtils {
+public class DateUtils {
     
     private static let DD_MM_YYYY_FMT = "dd/MM/yyyy"
     
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - date: <#date description#>
+    ///   - dateFormat: <#dateFormat description#>
+    /// - Returns: <#return value description#>
     public static func str2Date(date : String, dateFormat : String = DateUtils.DD_MM_YYYY_FMT) -> Date? {
         
         let dateFormatter = DateFormatter()
@@ -21,6 +27,12 @@ class DateUtils {
         
     }
     
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - date: <#date description#>
+    ///   - dateFormat: <#dateFormat description#>
+    /// - Returns: <#return value description#>
     public static func date2Str(date : Date, dateFormat : String = DateUtils.DD_MM_YYYY_FMT) -> String? {
         
         let dateFormatter = DateFormatter()

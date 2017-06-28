@@ -10,7 +10,7 @@
 import UIKit
 
 // MARK: - <#Description#>
-extension UITextField {
+public extension UITextField {
     
     /// <#Description#>
     private struct FKFieldPatterns {
@@ -69,7 +69,7 @@ extension UITextField {
     ///   - replacementChar: <#replacementChar description#>
     ///   - allowText: <#allowText description#>
     ///   - allowNumbers: <#allowNumbers description#>
-    func formatPattern(pattern:String?=nil, replacementChar:String?=nil,  allowText:Bool=true, allowNumbers:Bool=true) {
+    public func formatPattern(pattern:String?=nil, replacementChar:String?=nil,  allowText:Bool=true, allowNumbers:Bool=true) {
 
         objc_setAssociatedObject(self, &FKFieldPatterns.pattern,            pattern ?? "",         .OBJC_ASSOCIATION_RETAIN)
         objc_setAssociatedObject(self, &FKFieldPatterns.replacementChar,    replacementChar ?? "*", .OBJC_ASSOCIATION_RETAIN)
@@ -93,7 +93,7 @@ extension UITextField {
     ///
     /// - Parameter string: <#string description#>
     /// - Returns: <#return value description#>
-    func prepareString(string:String) -> String {
+    public func prepareString(string:String) -> String {
 
         var charSet : CharacterSet!
         
@@ -113,7 +113,7 @@ extension UITextField {
     /// <#Description#>
     ///
     /// - Parameter notification: <#notification description#>
-    func textDidChange(notification : NSNotification) {
+    public func textDidChange(notification : NSNotification) {
         
         self.format()
         
@@ -123,7 +123,7 @@ extension UITextField {
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    func utext() -> String? {
+    public func utext() -> String? {
         
         return self.text?.replacingOccurrences(of: ".", with: "")
                          .replacingOccurrences(of: "-", with: "")
@@ -134,7 +134,7 @@ extension UITextField {
     }
     
     /// <#Description#>
-    func format() {
+    public func format() {
         
         guard let text = self.text else {
             return
@@ -176,32 +176,32 @@ extension UITextField {
     }
     
     /// <#Description#>
-    func setupIMEIMask() {
+    public func setupIMEIMask() {
         // 35 531908 188567 0
         self.formatPattern(pattern: "** ****** ****** *", replacementChar:"*", allowText: false, allowNumbers: true)
         self.keyboardType = .numberPad
     }
     
     /// <#Description#>
-    func setupCPFMask() {
+    public func setupCPFMask() {
         self.formatPattern(pattern: "***.***.***-**", replacementChar:"*", allowText: false, allowNumbers: true)
         self.keyboardType = .numberPad
     }
     
     /// <#Description#>
-    func setupCNPJMask() {
+    public func setupCNPJMask() {
         self.formatPattern(pattern: "**.***.***/****-**", replacementChar:"*", allowText: false, allowNumbers: true)
         self.keyboardType = .numberPad
     }
     
     /// <#Description#>
-    func setupCEPMask() {
+    public func setupCEPMask() {
         self.formatPattern(pattern: "**.***-***", replacementChar:"*", allowText: false, allowNumbers: true)
         self.keyboardType = .numberPad
     }
     
     /// <#Description#>
-    func setupPhoneNumberMask() {
+    public func setupPhoneNumberMask() {
         self.formatPattern(pattern: "(**) *****-****", replacementChar:"*", allowText: false, allowNumbers: true)
         self.keyboardType = .numberPad
     }

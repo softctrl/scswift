@@ -10,14 +10,15 @@ import Foundation
 import CoreLocation
 import UIKit
 
-class SCLocationManager: NSObject, CLLocationManagerDelegate {
+public class SCLocationManager: NSObject, CLLocationManagerDelegate {
 
     private var on = false
     private var bg : SCBackgroundManager = (SCBackgroundManager.backgroundTaskManager())!
     
-    typealias LocationHandler = (CLLocationManager, [CLLocation]) -> ()
-    typealias FutureAction = () -> ()
+    public typealias LocationHandler = (CLLocationManager, [CLLocation]) -> ()
+    public typealias FutureAction = () -> ()
 
+    /// <#Description#>
     private lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
         manager.desiredAccuracy = kCLLocationAccuracyHundredMeters // kCLLocationAccuracyBestForNavigation
@@ -31,12 +32,12 @@ class SCLocationManager: NSObject, CLLocationManagerDelegate {
     /// <#Description#>
     ///
     /// - Parameter locHandler: <#locHandler description#>
-    func setHandler(_ locHandler : LocationHandler!) {
+    public func setHandler(_ locHandler : LocationHandler!) {
         self.locHandler = locHandler
     }
     
     /// <#Description#>
-    func  start() {
+    public func  start() {
         
         OperationQueue.main.addOperation {
             if !self.on {
@@ -49,7 +50,7 @@ class SCLocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     /// <#Description#>
-    func  stop() {
+    public func  stop() {
         
         OperationQueue.main.addOperation {
             if self.on {
@@ -66,7 +67,7 @@ class SCLocationManager: NSObject, CLLocationManagerDelegate {
     /// - Parameters:
     ///   - manager: <#manager description#>
     ///   - locations: <#locations description#>
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         guard locations.last != nil else {
             return
@@ -96,12 +97,13 @@ class SCLocationManager: NSObject, CLLocationManagerDelegate {
         }
 */
     }
-    
-    
-    
-//    let locman = CLLocationManager()
-//
-    func checkForLocationAccess(always:Bool = false, andThen f: FutureAction? = nil) {
+
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - always: <#always description#>
+    ///   - f: <#f description#>
+    public func checkForLocationAccess(always:Bool = false, andThen f: FutureAction? = nil) {
         // no services? fail but try get alert
         guard CLLocationManager.locationServicesEnabled() else {
             print("no location services")

@@ -9,7 +9,7 @@
 import Foundation
 import XCGLogger
 
-class SCLogger : NSObject {
+public class SCLogger : NSObject {
     
     private static let SC_LOGGER = "SCLogger"
     
@@ -51,19 +51,29 @@ class SCLogger : NSObject {
         super.init()
     }
     
-    static func getInstance() -> SCLogger {
+    /// <#Description#>
+    ///
+    /// - Returns: <#return value description#>
+    public static func getInstance() -> SCLogger {
         return SCLogger.SELF!
     }
     
-    static func setup(_ id : String = SCLogger.SC_LOGGER, _ idd : Bool = false) -> SCLogger {
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - id: <#id description#>
+    ///   - idd: <#idd description#>
+    /// - Returns: <#return value description#>
+    public static func setup(_ id : String = SCLogger.SC_LOGGER, _ idd : Bool = false) -> SCLogger {
         SCLogger.SELF = SCLogger(id, idd)
         return SCLogger.SELF!
     }
     
-    func log() -> XCGLogger {
+    /// <#Description#>
+    ///
+    /// - Returns: <#return value description#>
+    public func log() -> XCGLogger {
         return (SCLogger.SELF?.__log)!
     }
-    
-    
-    
+
 }

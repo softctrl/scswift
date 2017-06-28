@@ -6,9 +6,9 @@
 //  Copyright © 2017 softctrl.com.br. All rights reserved.
 //
 
-//import Foundation
-//import UIKit
-//
-//extension NSRange {
-//
-//}
+import Foundation
+import UIKit
+
+public extension NSRange {
+
+}

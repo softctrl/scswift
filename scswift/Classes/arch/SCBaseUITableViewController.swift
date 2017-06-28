@@ -10,12 +10,12 @@ import Foundation
 
 import UIKit
 
-class SCBaseUITableViewController: UITableViewController {
+public class SCBaseUITableViewController: UITableViewController {
     
     private var dlg : SCDialogUtils?
     
     /// <#Description#>
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         
         super.viewDidLoad()
 //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SCBaseUITableViewController.dismissKeyboard))
@@ -43,12 +43,12 @@ class SCBaseUITableViewController: UITableViewController {
     }
     
     /// <#Description#>
-    func dismissKeyboard() {
+    public func dismissKeyboard() {
         view.endEditing(true)
     }
     
     /// <#Description#>
-    override func didReceiveMemoryWarning() {
+    public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
@@ -57,7 +57,7 @@ class SCBaseUITableViewController: UITableViewController {
     /// - Parameters:
     ///   - uiViewController: <#uiViewController description#>
     ///   - animated: <#animated description#>
-    func pushViewController(_ uiViewController : UIViewController, animated : Bool = false) {
+    public func pushViewController(_ uiViewController : UIViewController, animated : Bool = false) {
         
         self.navigationController!.pushViewController(uiViewController, animated: animated)
         
@@ -70,6 +70,9 @@ class SCBaseUITableViewController: UITableViewController {
         self.navigationItem.title = title
     }
     
+    /// <#Description#>
+    ///
+    /// - Parameter title: <#title description#>
     public func setBackNavigationTitle(title : String) {
         self.navigationController?.navigationBar.topItem?.title = title
     }    
