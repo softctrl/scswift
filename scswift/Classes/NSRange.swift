@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-public extension NSRange {
+extension NSRange {
 
 }

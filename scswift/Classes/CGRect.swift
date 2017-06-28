@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension CGRect {
+extension CGRect {
     
     /// <#Description#>
     ///

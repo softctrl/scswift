@@ -10,7 +10,7 @@
 import UIKit
 
 // MARK: - <#Description#>
-public extension UITextField {
+extension UITextField {
     
     /// <#Description#>
     private struct FKFieldPatterns {

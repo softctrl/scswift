@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension CGSize {
+extension CGSize {
     
     /// <#Description#>
     ///

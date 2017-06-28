@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension NSObject {
+extension NSObject {
     
     /// <#Description#>
     ///
@@ -43,7 +43,7 @@ public extension NSObject {
     /// <#Description#>
     ///
     /// - Parameter json: <#json description#>
-    public func loadFromJson(_ json: [String: AnyObject]) {
+    open func loadFromJson(_ json: [String: AnyObject]) {
         
         for (key, value) in json {
             let keyName = key as String
@@ -82,7 +82,7 @@ public extension NSObject {
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    public func toDictionary() -> Dictionary<String, Any>! {
+    open func toDictionary() -> Dictionary<String, Any>! {
         return [:]
     }
     
@@ -90,7 +90,7 @@ public extension NSObject {
     ///
     /// - Parameter dict: <#dict description#>
     /// - Returns: <#return value description#>
-    public func loadFromDictionary(_ dict : Dictionary<String, Any>) -> NSObject {
+    open func loadFromDictionary(_ dict : Dictionary<String, Any>) -> NSObject {
         return self
     }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension String {
+extension String {
     
     public func md5() -> String {
         return "under development"

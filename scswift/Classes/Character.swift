@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public extension Character {
+extension Character {
     
 //    func isNumber() -> Bool {
 //        Charat

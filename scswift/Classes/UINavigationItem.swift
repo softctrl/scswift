@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UINavigationItem {
+extension UINavigationItem {
 
     /// <#Description#>
     ///

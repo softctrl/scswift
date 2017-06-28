@@ -8,7 +8,7 @@
 
 import SocketIO
 
-public extension SocketIOClient {
+extension SocketIOClient {
     
     /// <#Description#>
     ///

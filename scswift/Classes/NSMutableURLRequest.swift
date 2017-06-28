@@ -8,6 +8,6 @@
 
 import Foundation
 
-public extension NSMutableURLRequest {
+extension NSMutableURLRequest {
     
 }

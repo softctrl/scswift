@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIScrollView {
+extension UIScrollView {
 
     /// <#Description#>
     ///

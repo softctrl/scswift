@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - <#Description#>
-public extension Array {
+extension Array {
 
     /// <#Description#>
     ///
