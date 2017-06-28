@@ -63,7 +63,7 @@ open class SCHTTPRequest: NSObject {
     ///
     /// - Parameter method: <#method description#>
     /// - Returns: <#return value description#>
-    public func createUrlRequest(_ method : String! = HTTPMethod.GET, _ url: URL!) -> NSMutableURLRequest {
+    open func createUrlRequest(_ method : String! = HTTPMethod.GET, _ url: URL!) -> NSMutableURLRequest {
         
         let urlRequest : NSMutableURLRequest = NSMutableURLRequest(url: url)
         urlRequest.httpMethod = method

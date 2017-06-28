@@ -19,16 +19,16 @@ import XCGLogger
 
 public class SCErrorBase : Error {}
 
-typealias ReturnAction = (SCBaseUIViewController.Return) -> Swift.Void
-
 open class SCBaseUIViewController: UIViewController {
     
-    let log : XCGLogger = {
+    public typealias ReturnAction = (SCBaseUIViewController.Return) -> Swift.Void
+    
+    public let log : XCGLogger = {
         let _log = SCLogger.getInstance().log()
         return _log
     }()
     
-    enum Return {
+    public enum Return {
         case SUCCESS
         case ERROR
     }
@@ -91,7 +91,7 @@ open class SCBaseUIViewController: UIViewController {
     }
 
     /// <#Description#>
-    public func setupNavigationBar() {}
+    open func setupNavigationBar() {}
     
     /// <#Description#>
     private func setupMenuButton() {
@@ -105,7 +105,7 @@ open class SCBaseUIViewController: UIViewController {
     /// <#Description#>
     ///
     /// - Parameter sender: <#sender description#>
-    public func menuClicked(sender:UIBarButtonItem?){}
+    open func menuClicked(sender:UIBarButtonItem?){}
 
     
     /// <#Description#>
@@ -177,14 +177,14 @@ open class SCBaseUIViewController: UIViewController {
     /// <#Description#>
     ///
     /// - Parameter title: <#title description#>
-    public func setBackNavigationTitle(title : String) {
+    open func setBackNavigationTitle(title : String) {
         self.navigationController?.navigationBar.topItem?.title = title
     }
     
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    public func getScrollView() -> UIScrollView? {
+    open func getScrollView() -> UIScrollView? {
         return nil
     }
     
@@ -237,7 +237,7 @@ open class SCBaseUIViewController: UIViewController {
     }
     
     /// Use this method to set an action that can be performed wherever you want into your view controller 
-    func action(_ returnAction : @escaping ReturnAction = {_ in }) -> SCBaseUIViewController {
+    public func action(_ returnAction : @escaping ReturnAction = {_ in }) -> SCBaseUIViewController {
         self.returnAction = returnAction
         return self
     }
@@ -245,7 +245,7 @@ open class SCBaseUIViewController: UIViewController {
     /// <#Description#>
     ///
     /// - Parameter code: <#code description#>
-    func performAction(_ code: SCBaseUIViewController.Return! = SCBaseUIViewController.Return.SUCCESS) {
+    public func performAction(_ code: SCBaseUIViewController.Return! = SCBaseUIViewController.Return.SUCCESS) {
         self.returnAction?(code)
     }
 
