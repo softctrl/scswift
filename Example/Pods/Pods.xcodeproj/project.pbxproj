@@ -217,6 +217,7 @@
 		A7BE41440154DA606144313E38FEEDEE /* FilterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92574934672C9FD8FB2F16ECDC873703 /* FilterProtocol.swift */; };
 		A7E8827FE2654A15B665B47A0DBBD49C /* RLMSyncSession.h in Headers */ = {isa = PBXBuildFile; fileRef = DA3ACB1F038088CB008E5A7CCAADA69B /* RLMSyncSession.h */; };
 		A8539E4B1F04380200FDA85C /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8539E4A1F04380200FDA85C /* Realm.swift */; };
+		A8E720461F053A8C00693920 /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E720451F053A8C00693920 /* MKMapView.swift */; };
 		A9E0D5B9D81913CFB282049C6BD01AD8 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028276DCCF07B052F5D1E0CC0854FD /* DateUtils.swift */; };
 		AA5ED363099071FD256B0F88FFBB42F7 /* sync_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E32A34B37CC2266DD1A2EB38033A539 /* sync_manager.cpp */; settings = {COMPILER_FLAGS = "-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@\"2.8.3\"' -D__ASSERTMACROS__ -DREALM_ENABLE_SYNC"; }; };
 		AB53D44AD044F14481BCC5BC88BB9539 /* NSError+RLMSync.h in Headers */ = {isa = PBXBuildFile; fileRef = E63DEFE57BB8AB8555E8A5E8B30D76BE /* NSError+RLMSync.h */; };
@@ -738,6 +739,7 @@
 		A8539E4A1F04380200FDA85C /* Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		A88031BCB13BE281051F7E05283A5D13 /* RLMArray.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = RLMArray.mm; path = Realm/RLMArray.mm; sourceTree = "<group>"; };
 		A8A5A1BAB22AD704B064787DD2BB5CC4 /* CGRect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		A8E720451F053A8C00693920 /* MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
 		A93C363B8659A7A28181095A9F9F44E5 /* RLMMigration_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMMigration_Private.h; path = include/RLMMigration_Private.h; sourceTree = "<group>"; };
 		A97A05B034B3C0B9C38A07C091E20CB5 /* Pods_scswift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_scswift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA24154E423E7369D72FFD9BDDE6DE75 /* Object.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
@@ -1477,11 +1479,17 @@
 		B885D68780D893190C3C19BA8C4D6079 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8DB7C616C84394FC2479ECD4ED1264CD /* arch */,
+				9763CA7E97F26C7D3049F71CC9817E1C /* location */,
+				6A2B97FF9023D7D0BC33AE8CF7DC0C33 /* realm */,
+				534309996844C6206DC42C2B443708F9 /* thread */,
+				924906774C83B79352CA7FC188CF9735 /* utils */,
 				392E5AAC362DE19CB43B5C4E8A5C9ADA /* Array.swift */,
 				A8A5A1BAB22AD704B064787DD2BB5CC4 /* CGRect.swift */,
 				45904C53D6ADEB2E0D31921B898E2E02 /* CGSize.swift */,
 				A037F247AD213A6B33C7A3250E8513D4 /* Character.swift */,
 				FDA7E0E9E1BA41D18085B098DE4FCBB8 /* Data.swift */,
+				A8E720451F053A8C00693920 /* MKMapView.swift */,
 				9DABEE06B7C4CEB55CB0B54D4EA55D75 /* NSMutableURLRequest.swift */,
 				F7B428A1BA7AAF06D7D8859E073ED290 /* NSObject.swift */,
 				7CE628FA5893D57575169A4532E51DF2 /* NSRange.swift */,
@@ -1495,11 +1503,6 @@
 				DEAD05507DBB4E63963FA896258B5570 /* UITableView.swift */,
 				5A1ED05E375439FDCAD79F36C647FA61 /* UITextField.swift */,
 				71598A50D92D3848787AC7F52C6AE738 /* XCGLogger.swift */,
-				8DB7C616C84394FC2479ECD4ED1264CD /* arch */,
-				9763CA7E97F26C7D3049F71CC9817E1C /* location */,
-				6A2B97FF9023D7D0BC33AE8CF7DC0C33 /* realm */,
-				534309996844C6206DC42C2B443708F9 /* thread */,
-				924906774C83B79352CA7FC188CF9735 /* utils */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1873,6 +1876,7 @@
 				2D90800AEC5FBDD5ED4B00AC2916F0E6 /* Data.swift in Sources */,
 				A9E0D5B9D81913CFB282049C6BD01AD8 /* DateUtils.swift in Sources */,
 				ECFF3C48D2DB33ADE54A4624C7F026A9 /* NSMutableURLRequest.swift in Sources */,
+				A8E720461F053A8C00693920 /* MKMapView.swift in Sources */,
 				3A8D8C0F10AC4B86D7418F4B1D2BE0DA /* NSObject.swift in Sources */,
 				F8AAD3C3F4F09C5C7255148D54238D87 /* NSRange.swift in Sources */,
 				AB729D344E4A3D1D5AA356EF67175EAC /* Object.swift in Sources */,
