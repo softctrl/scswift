@@ -16,7 +16,7 @@ public protocol  SCObject {
     func delete()
 }
 
-// MARK: - <#SCObject#>
+
 extension Object : SCObject {
 
     /// <#Description#>
@@ -27,6 +27,9 @@ extension Object : SCObject {
         }
     }
     
+    /// <#Description#>
+    ///
+    /// - Parameter upd: <#upd description#>
     public func update(_ upd : ()->()) {
         let realm = try! Realm()
         try! realm.write {
@@ -35,6 +38,7 @@ extension Object : SCObject {
     }
 
     
+    /// <#Description#>
     public func delete() {
         let realm = try! Realm()
         try! realm.write {
@@ -42,4 +46,11 @@ extension Object : SCObject {
         }
     }
     
+    /// Every Realm Object instance has the capability to access in a easy way a Realm manager.
+    ///
+    /// - Returns: <#return value description#>
+    public static func rlm() -> Realm {
+        return SCRealmDBManager.Rlm()
+    }
+
 }

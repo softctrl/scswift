@@ -1,6 +1,6 @@
 //
 //  SCRealmDBManager.swift
-//  SktTests
+//  SCSwift
 //
 //  Created by Timoshenko on 27/03/17.
 //  Copyright © 2017 SoftCtrl.com. All rights reserved.
