@@ -17,5 +17,12 @@ extension Data {
     public func hex(separator:String = "") -> String {
         return (self.map { String(format: "%02X", $0) }).joined(separator: separator)
     }
+    
+    /// <#Description#>
+    ///
+    /// - Returns: <#return value description#>
+    public func toString() -> String? {
+        return String(data: self, encoding: .utf8)
+    }
 
 }

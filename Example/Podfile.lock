@@ -24,14 +24,14 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   scswift:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
-  scswift: bcd8dee28854801a5a00ebf4b57421dc2005864e
+  scswift: 17d96d8b218450dcc5128e2d3d16b7b54b1bd04c
   Socket.IO-Client-Swift: a2faffdbde89c63aebc5d631041530c1068b02b8
   XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
 

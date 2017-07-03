@@ -12,9 +12,11 @@ extension UIScrollView {
 
     /// <#Description#>
     ///
-    /// - Parameter screenSize: <#screenSize description#>
-    public func setupContentSize(_ screenSize : CGSize! = CGSize.mainSize()) {
-        self.contentSize = screenSize
+    /// - Parameters:
+    ///   - screenSize: <#screenSize description#>
+    ///   - plus: <#plus description#>
+    public func setupContentSize(_ screenSize : CGSize! = CGSize.mainSize(), plus : CGFloat = 0) {
+        self.contentSize =  CGSize(width: screenSize.width, height: (screenSize.height + plus))
     }
     
 }
