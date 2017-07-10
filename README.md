@@ -2,7 +2,7 @@
 
 [![CI Status](http://img.shields.io/travis/carlostimoshenkorodrigueslopes@gmail.com/scswift.svg?style=flat)](https://travis-ci.org/carlostimoshenkorodrigueslopes@gmail.com/scswift)
 [![Version](https://img.shields.io/cocoapods/v/scswift.svg?style=flat)](http://cocoapods.org/pods/scswift)
-[![License](https://img.shields.io/cocoapods/l/scswift.svg?style=flat)](http://cocoapods.org/pods/scswift)
+[![License](https://img.shields.io/cocoapods/l/scswift.svg?style=flat)](https://github.com/softctrl/scswift/blob/master/LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/scswift.svg?style=flat)](http://cocoapods.org/pods/scswift)
 
 ## Example
