@@ -99,6 +99,7 @@ open class SCHTTPRequest: NSObject {
     ///   - completionHandler: <#completionHandler description#>
     public func get(url: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
 
+        print("URL: \(url)")
         self.perform(method: HTTPMethod.GET, url : url, completionHandler : completionHandler)
 
     }
@@ -157,6 +158,24 @@ open class SCHTTPRequest: NSObject {
         
         self.perform(method: HTTPMethod.OPTIONS, url : url, completionHandler : completionHandler)
         
+    }
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - response: <#response description#>
+    ///   - error: <#error description#>
+    /// - Returns: <#return value description#>
+    public func performOk(_ response: URLResponse? = nil, _ error: Error? = nil) -> Bool {
+        
+        var result = (error == nil)
+
+        if let rs = response as? HTTPURLResponse {
+            result = result && (rs.statusCode == 200)
+        }
+        
+        return result
+
     }
     
 }

@@ -17,7 +17,7 @@ extension MKMapView {
     public func zoomToLocation(_ location: CLLocationCoordinate2D! = CLLocationCoordinate2D()) {
     
         self.showsUserLocation = true
-        let viewRegion = MKCoordinateRegionMakeWithDistance(location, 600, 600)
+        let viewRegion = MKCoordinateRegionMakeWithDistance(location, 2400, 2400)
         self.setRegion(viewRegion, animated: false)
 
     }

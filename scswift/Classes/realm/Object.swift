@@ -13,6 +13,7 @@ import RealmSwift
 public protocol  SCObject {
     func insert()
     func update(_ upd : ()->())
+    func persist()
     func delete()
 }
 
@@ -35,6 +36,11 @@ extension Object : SCObject {
         try! realm.write {
             upd()
         }
+    }
+    
+    /// <#Description#>
+    open func persist() {
+        // TODO:
     }
 
     
