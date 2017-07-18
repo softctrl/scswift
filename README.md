@@ -22,7 +22,7 @@ pod "scswift"
 
 ## Author
 
-carlostimoshenkorodrigueslopes@gmail.com, carlostimoshenkorodrigueslopes@gmail.com
+Tomoshenko<carlostimoshenkorodrigueslopes@gmail.com>
 
 ## License
 
