@@ -84,7 +84,7 @@ open class SCHTTPRequest: NSObject {
 
         urlRequest.httpBody = body?.data(using: String.Encoding.ascii)
         
-        urlRequest.addValue(ContentType.JSON, forHTTPHeaderField : ContentType.FIELD_NAME)
+        urlRequest.addValue(ContentType.JSON, forHTTPHeaderField : ContentType.FIELD_NAME) // TODO: make this configurable.
         
         let task = URLSession.shared.dataTask(with: urlRequest as URLRequest, completionHandler: completionHandler)
 
