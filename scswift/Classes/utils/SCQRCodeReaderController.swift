@@ -24,7 +24,8 @@ open class SCQRCodeReaderController/*: AVCaptureMetadataOutputObjectsDelegate*/ 
     
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
-    var qrCodeFrameView:UIView?
+
+//    var qrCodeFrameView:UIView?
     
     public init() { }
 
@@ -67,14 +68,14 @@ open class SCQRCodeReaderController/*: AVCaptureMetadataOutputObjectsDelegate*/ 
 //            view.bringSubview(toFront: topbar)
             
             // Initialize QR Code Frame to highlight the QR code
-            qrCodeFrameView = UIView()
-            
-            if let qrCodeFrameView = qrCodeFrameView {
-                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
-                qrCodeFrameView.layer.borderWidth = 2
-                controller.view.addSubview(qrCodeFrameView)
-                controller.view.bringSubview(toFront: qrCodeFrameView)
-            }
+//            qrCodeFrameView = UIView()
+//            
+//            if let qrCodeFrameView = qrCodeFrameView {
+//                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+//                qrCodeFrameView.layer.borderWidth = 2
+//                controller.view.addSubview(qrCodeFrameView)
+//                controller.view.bringSubview(toFront: qrCodeFrameView)
+//            }
             
         } catch {
             // If any error occurs, simply print it out and don't continue any more.
@@ -99,7 +100,7 @@ open class SCQRCodeReaderController/*: AVCaptureMetadataOutputObjectsDelegate*/ 
         
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects == nil || metadataObjects.count == 0 {
-            qrCodeFrameView?.frame = CGRect.zero
+//            qrCodeFrameView?.frame = CGRect.zero
             print("No QR/barcode is detected")
             action(nil)
             return
@@ -111,7 +112,7 @@ open class SCQRCodeReaderController/*: AVCaptureMetadataOutputObjectsDelegate*/ 
         if supportedCodeTypes.contains(metadataObj.type) {
             // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-            qrCodeFrameView?.frame = barCodeObject!.bounds
+//            qrCodeFrameView?.frame = barCod vcvcc                                             vbeObject!.bounds
             
             if metadataObj.stringValue != nil {
                 print("QR/barcode detected: \(metadataObj.stringValue)")
