@@ -9,9 +9,11 @@
 import Foundation
 
 extension String {
-//                                     "^(http:\\/\\/|https:\\/\\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?$"
-//    private static let URL_PATTERN = "((?:http|https)://)?(?:www\\.)?[\\w\\d\\-_]+\\.\\w{2,3}(\\.\\w{2})?(/(?<=/)(?:[\\w\\d\\-./_]+)?)?"
+
     
+    /// Return a valid MD5 hash for this String.
+    ///
+    /// - Returns: a valid Hash MD5 String.
     public func md5() -> String {
         return "under development"
     }

@@ -35,34 +35,18 @@ open class SCHTTPRequest: NSObject {
         public static var FORM_DATA = "multipart/form-data"
         public static var TEXT = "text/plain"
     }
-    
-    
-    
-    
-//    private var urlRequest : NSMutableURLRequest
-//    private var baseUrl : String = ""
-    
-    /// Default constructor.
-    ///
-    /// - Parameter baseUrl: <#baseUrl description#>
-//    public init(baseUrl : String) {
-//        
-////        self.baseUrl = baseUrl
-//        super.init()
-//        
-//    }
 
-    /// <#Description#>
+    /// Default Initializer
     public override init() {
 
         super.init()
         
     }
     
-    /// <#Description#>
+    /// Create a valid NSMutableURLRequest.
     ///
-    /// - Parameter method: <#method description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter method: a valid HTTP verb.
+    /// - Returns: a valid NSMutableURLRequest.
     open func createUrlRequest(_ method : String! = HTTPMethod.GET, _ url: URL!) -> NSMutableURLRequest {
         
         let urlRequest : NSMutableURLRequest = NSMutableURLRequest(url: url)
@@ -92,11 +76,11 @@ open class SCHTTPRequest: NSObject {
 
     }
     
-    /// <#Description#>
+    /// Performs a valid GET into a valid informed URL.
     ///
     /// - Parameters:
-    ///   - url: <#url description#>
-    ///   - completionHandler: <#completionHandler description#>
+    ///   - url: a valid String URL.
+    ///   - completionHandler: a valid handler for the request.
     public func get(url: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
 
         print("URL: \(url)")
@@ -104,68 +88,69 @@ open class SCHTTPRequest: NSObject {
 
     }
     
-    /// <#Description#>
+    /// Performs a valid POST into a valid informed URL.
     ///
     /// - Parameters:
-    ///   - url: <#url description#>
-    ///   - completionHandler: completionHandler description
+    ///   - url: a valid String URL.
+    ///   - body: a String Body.
+    ///   - completionHandler: a valid handler for the request.
     public func post(url: String, body: String? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
         print("\(body ?? "")\n")
         self.perform(method: HTTPMethod.POST, url : url, body: body, completionHandler : completionHandler)
         
     }
     
-    /// <#Description#>
+    /// Performs a valid DELETE into a valid informed URL.
     ///
     /// - Parameters:
-    ///   - url: <#url description#>
-    ///   - completionHandler: <#completionHandler description#>
+    ///   - url: a valid String URL.
+    ///   - completionHandler: a valid handler for the request.
     public func delete(url: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
         
         self.perform(method: HTTPMethod.POST, url : url, completionHandler : completionHandler)
         
     }
     
-    /// <#Description#>
+    /// Performs a valid PATCH into a valid informed URL.
     ///
     /// - Parameters:
-    ///   - url: <#url description#>
-    ///   - completionHandler: <#completionHandler description#>
+    ///   - url: a valid String URL.
+    ///   - completionHandler: a valid handler for the request.
     public func patch(url: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
         
         self.perform(method: HTTPMethod.PATCH, url : url, completionHandler : completionHandler)
         
     }
     
-    /// <#Description#>
+    /// Performs a valid PUT into a valid informed URL.
     ///
     /// - Parameters:
-    ///   - url: <#url description#>
-    ///   - body: <#body description#>
-    ///   - completionHandler: <#completionHandler description#>
+    ///   - url: a valid String URL.
+    ///   - body: a String Body.
+    ///   - completionHandler: a valid handler for the request.
     public func put(url: String, body: String? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
 
         self.perform(method: HTTPMethod.PUT, url : url, body : body, completionHandler : completionHandler)
         
     }
     
-    /// <#Description#>
+    /// Performs a valid OPTIONS into a valid informed URL.
     ///
     /// - Parameters:
-    ///   - url: <#url description#>
-    ///   - completionHandler: <#completionHandler description#>
+    ///   - url: a valid String URL.
+    ///   - completionHandler: a valid handler for the request.
     public func options(url: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
         
         self.perform(method: HTTPMethod.OPTIONS, url : url, completionHandler : completionHandler)
         
     }
     
-    /// <#Description#>
+    /// Validates when a response have a result ok. CODE 200.
     ///
     /// - Parameters:
-    ///   - response: <#response description#>
-    ///   - error: <#error description#>
-    /// - Returns: <#return value description#>
+    ///   - response: a valid HTTP URLResponse.
+    ///   - error: a error.
+    /// - Returns: true if all is good, false otherwise.
     public func performOk(_ response: URLResponse? = nil, _ error: Error? = nil) -> Bool {
         
         var result = (error == nil)
