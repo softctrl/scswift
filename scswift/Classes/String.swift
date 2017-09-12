@@ -25,6 +25,10 @@ extension String {
         return "\"\(self)\""
     }
     
+    /// Validates whena informed String is nil or empty.
+    ///
+    /// - Parameter value: a String.
+    /// - Returns: true is the informed String is nil or empty, false otherwise.
     public static func isNilOrEmpty(_ value : String? = nil) -> Bool {
         return (value == nil || value!.isEmpty)
     }
@@ -32,7 +36,7 @@ extension String {
     /// Based on:
     /// http://stackoverflow.com/questions/24092884/get-nth-character-of-a-string-in-swift-programming-language
     ///
-    /// - Parameter i: <#i description#>
+    /// - Parameter i: index of the Character.
     public func character(at: Int) -> Character {
         return self[self.index(self.startIndex, offsetBy: at)]
     }
