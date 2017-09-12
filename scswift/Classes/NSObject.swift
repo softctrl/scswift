@@ -10,9 +10,9 @@ import Foundation
 
 extension NSObject {
     
-    /// <#Description#>
+    /// A initializer that receives a valid Json representation of this NSObject.
     ///
-    /// - Parameter jsonStr: <#jsonStr description#>
+    /// - Parameter jsonStr: a Json String for this NSObject.
     public convenience init(_ jsonStr:String) {
         
         self.init()
@@ -24,9 +24,9 @@ extension NSObject {
         
     }
     
-    /// <#Description#>
+    /// Performs a field load from a valid data parameter.
     ///
-    /// - Parameter data: <#data description#>
+    /// - Parameter data: data.
     public final func loadFromData(_ data: Data!) {
         
         do {
@@ -40,7 +40,7 @@ extension NSObject {
     }
 
     
-    /// <#Description#>
+    /// Performs a load from a valid Json String using reflection. You can also override this method to achieve better performances.
     ///
     /// - Parameter json: <#json description#>
     open func loadFromJson(_ json: [String: AnyObject]) {
@@ -57,10 +57,10 @@ extension NSObject {
     }
 
 
-    /// <#Description#>
+    /// It parses this NSObject to a valid Json String representation.
     ///
-    /// - Parameter pretty: <#pretty description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter pretty: if true will format the generated Json String.
+    /// - Returns: a Json String.
     public final func toJson(_ pretty : Bool = false) -> String {
         
         var json = "{}"

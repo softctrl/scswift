@@ -21,8 +21,7 @@ extension MKMapView {
         self.setRegion(viewRegion, animated: false)
 
     }
-    
-    
+
     /// Based on:
     /// https://gist.github.com/andrewgleave/915374
     /// Author: https://gist.github.com/ekussberg

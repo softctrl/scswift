@@ -10,9 +10,9 @@ import UIKit
 
 extension CGSize {
     
-    /// <#Description#>
+    /// Returns the CGSize of the main screen.
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: a CGSize.
     public static func mainSize() -> CGSize {
         let mainBound = CGRect.mainBounds()
         return CGSize(width: mainBound.width, height: mainBound.height)

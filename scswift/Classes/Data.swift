@@ -10,17 +10,17 @@ import Foundation
 
 extension Data {
  
-    /// <#Description#>
+    /// Convert a data to his Hexadecimal String representation.
     ///
-    /// - Parameter separator: <#separator description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter separator: a Separator.
+    /// - Returns: a Hexadecimal String representation.
     public func hex(separator:String = "") -> String {
         return (self.map { String(format: "%02X", $0) }).joined(separator: separator)
     }
     
-    /// <#Description#>
+    /// Convert a data to his String representation.
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: String representation.
     public func toString() -> String? {
         return String(data: self, encoding: .utf8)
     }

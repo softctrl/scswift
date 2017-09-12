@@ -11,22 +11,18 @@ import UIKit
 
 extension Character {
     
-//    func isNumber() -> Bool {
-//        Charat
-//    }
-    
-    /// <#Description#>
+    /// Validate when a Character is a valid number or not.
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: true is it is a valid number otherwise false.
     public func isNumber() -> Bool {
 
         return CharacterSet.decimalDigits.contains(String(self).unicodeScalars.first!)
 
     }
     
-    /// <#Description#>
+    /// Convert a Character to a valid UnicodeSCalar.
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: a UnicodeScalar.
     public func unicodeScalar() -> UnicodeScalar {
         return String(self).unicodeScalars.first!
     }

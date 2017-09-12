@@ -10,9 +10,9 @@ import UIKit
 
 extension CGRect {
     
-    /// <#Description#>
+    /// Returns the main bounds.
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: a CGRect for the main bounds.
     public static func mainBounds() -> CGRect {
         return UIScreen.main.bounds
     }

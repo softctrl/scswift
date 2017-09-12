@@ -11,10 +11,10 @@ import Foundation
 // MARK: - <#Description#>
 extension Array {
 
-    /// <#Description#>
+    /// Convert an Array object to a Json String.
     ///
-    /// - Parameter pretty: <#pretty description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter pretty: if true it forces the string to be formated.
+    /// - Returns: Json String.
     public func toJson(_ pretty : Bool = false) -> String {
         
         var json = "[]"

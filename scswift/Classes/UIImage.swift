@@ -12,9 +12,6 @@ import CoreGraphics
 
 
 extension UIImage {
-    
-    
-//    convenience init()
 
     /// <#Description#>
     /// Based on:
