@@ -111,7 +111,7 @@ open class SCQRCodeReaderController/*: AVCaptureMetadataOutputObjectsDelegate*/ 
         
         if supportedCodeTypes.contains(metadataObj.type) {
             // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
-            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
+            _ = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
 //            qrCodeFrameView?.frame = barCod vcvcc                                             vbeObject!.bounds
             
             if metadataObj.stringValue != nil {

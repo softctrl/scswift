@@ -11,29 +11,34 @@ import Foundation
 /// Basic HTTP restful client.
 open class SCHTTPRequest: NSObject {
     
+    /// Just an alias to better represent an HTTP verb.
+    public typealias Verb = String!
+    
     /// Supported HTTP methods.
     public final class HTTPMethod {
-        public static var GET = "GET"
-        public static var POST = "POST"
-        public static var DELETE = "DELETE"
-        public static var PUT = "PUT"
-        public static var PATCH = "PATCH"
-        public static var OPTIONS = "OPTIONS"
+        public static var GET : Verb = "GET"
+        public static var POST : Verb = "POST"
+        public static var DELETE : Verb = "DELETE"
+        public static var PUT : Verb = "PUT"
+        public static var PATCH : Verb = "PATCH"
+        public static var OPTIONS : Verb = "OPTIONS"
     }
     
+    /// Just an alias to better represent a valid Content type.
+    public typealias ConType = String!
     
     /// HTTP Content Types.
     public final class ContentType {
-        static var FIELD_NAME = "Content-Type"
-        public static var JSON = "application/json"
-        public static var STREAM = "application/octet-stream"
-        public static var URL_ENCODED = "application/x-www-form-urlencoded"
-        public static var XML = "application/xml"
-        public static var JPEG = "image/jpeg"
-        public static var PNG = "image/png"
-        public static var GIF = "image/gif"
-        public static var FORM_DATA = "multipart/form-data"
-        public static var TEXT = "text/plain"
+        static var FIELD_NAME : ConType = "Content-Type"
+        public static var JSON : ConType = "application/json"
+        public static var STREAM : ConType = "application/octet-stream"
+        public static var URL_ENCODED : ConType = "application/x-www-form-urlencoded"
+        public static var XML : ConType = "application/xml"
+        public static var JPEG : ConType = "image/jpeg"
+        public static var PNG : ConType = "image/png"
+        public static var GIF : ConType = "image/gif"
+        public static var FORM_DATA : ConType = "multipart/form-data"
+        public static var TEXT : ConType = "text/plain"
     }
 
     /// Default Initializer
@@ -54,21 +59,31 @@ open class SCHTTPRequest: NSObject {
         return urlRequest
         
     }
+    
+    ///
+    ///
+    /// - Parameters:
+    ///   - method:
+    ///   - url:
+    ///   - completionHandler: A closure that will handle the performed request.
+
 
     /// Perform a HTTP verb on the specified url.
     ///
     /// - Parameters:
     ///   - method: HTTP Verb.
     ///   - url: url address.
-    ///   - completionHandler: A closure that will handle the performed request.
-    private func perform(method: String, url : String, body : String? = nil, completionHandler : @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
+    ///   - body: If you want to send a body request.
+    ///   - contentType: <#contentType description#>
+    ///   - completionHandler: <#completionHandler description#>
+    private func perform(method: String, url : String, body : String? = nil, contentType : ConType = ContentType.JSON, completionHandler : @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
         
         let urlRequest : NSMutableURLRequest = self.createUrlRequest(method, URL(string: url)!)
         urlRequest.httpMethod = method
 
         urlRequest.httpBody = body?.data(using: String.Encoding.ascii)
         
-        urlRequest.addValue(ContentType.JSON, forHTTPHeaderField : ContentType.FIELD_NAME) // TODO: make this configurable.
+        urlRequest.addValue(contentType, forHTTPHeaderField : ContentType.FIELD_NAME)
         
         let task = URLSession.shared.dataTask(with: urlRequest as URLRequest, completionHandler: completionHandler)
 
@@ -81,10 +96,10 @@ open class SCHTTPRequest: NSObject {
     /// - Parameters:
     ///   - url: a valid String URL.
     ///   - completionHandler: a valid handler for the request.
-    public func get(url: String, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
+    public func get(url: String, contentType : ConType = ContentType.JSON, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
 
         print("URL: \(url)")
-        self.perform(method: HTTPMethod.GET, url : url, completionHandler : completionHandler)
+        self.perform(method: HTTPMethod.GET, url : url, contentType: contentType, completionHandler : completionHandler)
 
     }
     
@@ -94,9 +109,9 @@ open class SCHTTPRequest: NSObject {
     ///   - url: a valid String URL.
     ///   - body: a String Body.
     ///   - completionHandler: a valid handler for the request.
-    public func post(url: String, body: String? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
-        print("\(body ?? "")\n")
-        self.perform(method: HTTPMethod.POST, url : url, body: body, completionHandler : completionHandler)
+    public func post(url: String, body: String? = nil, contentType : ConType = ContentType.JSON, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
+        print("POST\n\(body ?? "")\n")
+        self.perform(method: HTTPMethod.POST, url : url, body: body, contentType: contentType, completionHandler : completionHandler)
         
     }
     
@@ -128,9 +143,9 @@ open class SCHTTPRequest: NSObject {
     ///   - url: a valid String URL.
     ///   - body: a String Body.
     ///   - completionHandler: a valid handler for the request.
-    public func put(url: String, body: String? = nil, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
+    public func put(url: String, body: String? = nil, contentType : ConType = ContentType.JSON, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
 
-        self.perform(method: HTTPMethod.PUT, url : url, body : body, completionHandler : completionHandler)
+        self.perform(method: HTTPMethod.PUT, url : url, body : body, contentType : contentType, completionHandler : completionHandler)
         
     }
     
