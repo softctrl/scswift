@@ -59,14 +59,6 @@ open class SCHTTPRequest: NSObject {
         return urlRequest
         
     }
-    
-    ///
-    ///
-    /// - Parameters:
-    ///   - method:
-    ///   - url:
-    ///   - completionHandler: A closure that will handle the performed request.
-
 
     /// Perform a HTTP verb on the specified url.
     ///
@@ -74,8 +66,8 @@ open class SCHTTPRequest: NSObject {
     ///   - method: HTTP Verb.
     ///   - url: url address.
     ///   - body: If you want to send a body request.
-    ///   - contentType: <#contentType description#>
-    ///   - completionHandler: <#completionHandler description#>
+    ///   - contentType: Inform a valid content type, or let application/json as default value.
+    ///   - completionHandler: A closure that will handle the performed request.
     private func perform(method: String, url : String, body : String? = nil, contentType : ConType = ContentType.JSON, completionHandler : @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
         
         let urlRequest : NSMutableURLRequest = self.createUrlRequest(method, URL(string: url)!)

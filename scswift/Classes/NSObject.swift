@@ -39,8 +39,8 @@ extension NSObject {
         
     }
 
-    
-    /// Performs a load from a valid Json String using reflection. You can also override this method to achieve better performances.
+    /// Performs a load from a valid Json String using reflection.
+    /// ==> You can also override this method to achieve better performances.
     ///
     /// - Parameter json: <#json description#>
     open func loadFromJson(_ json: [String: AnyObject]) {
@@ -55,7 +55,6 @@ extension NSObject {
         }
         
     }
-
 
     /// It parses this NSObject to a valid Json String representation.
     ///
