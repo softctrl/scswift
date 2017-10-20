@@ -9,7 +9,13 @@
 import Foundation
 
 extension String {
-
+    
+    /// Transform a Stirng to a valid Data.
+    ///
+    /// - Returns: A valid Data instance.
+    public func data() -> Data? {
+        return self.data(using: String.Encoding.utf8, allowLossyConversion: false)
+    }
     
     /// Return a valid MD5 hash for this String.
     ///
@@ -49,9 +55,9 @@ extension String {
         return unichar(self[self.index(self.startIndex, offsetBy: at)].unicodeScalar().value)
     }
     
-    /// <#Description#>
+    /// Inform the length of this String.
     ///
-    /// - Returns: <#return value description#>
+    /// - Returns: the length of this String.
     public func count() -> Int {
         return self.characters.count
     }
