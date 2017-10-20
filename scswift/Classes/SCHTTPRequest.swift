@@ -29,7 +29,8 @@ open class SCHTTPRequest: NSObject {
     
     /// HTTP Content Types.
     public final class ContentType {
-        static var FIELD_NAME : String = "Content-Type"
+//        static var FIELD_NAME : String = "Content-Type"
+        
         public static var JSON : ConType = "application/json"
         public static var STREAM : ConType = "application/octet-stream"
         public static var URL_ENCODED : ConType = "application/x-www-form-urlencoded"
@@ -40,7 +41,14 @@ open class SCHTTPRequest: NSObject {
         public static var FORM_DATA : ConType = "multipart/form-data"
         public static var TEXT : ConType = "text/plain"
     }
+    
+    public final class Field {
+        
+        static var CONTENT_TYPE : String = "Content-Type"
+        static var CONTENT_LENGTH : String = "content-length"
 
+    }
+    
     /// Default Initializer
     public override init() {
 
@@ -73,13 +81,12 @@ open class SCHTTPRequest: NSObject {
         let urlRequest : NSMutableURLRequest = self.createUrlRequest(method, URL(string: url)!)
         urlRequest.httpMethod = method
 
-        //let jsonData = jsonStr.data(using: String.Encoding.utf8, allowLossyConversion: false)
         if let data = body?.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             urlRequest.httpBody = data
-            urlRequest.addValue(String(data.count), forHTTPHeaderField : "content-length")
+            urlRequest.addValue(String(data.count), forHTTPHeaderField : Field.CONTENT_LENGTH)
         }
 
-        urlRequest.addValue(contentType, forHTTPHeaderField : ContentType.FIELD_NAME)
+        urlRequest.addValue(contentType, forHTTPHeaderField : Field.CONTENT_TYPE)
         
         let task = URLSession.shared.dataTask(with: urlRequest as URLRequest, completionHandler: completionHandler)
 
